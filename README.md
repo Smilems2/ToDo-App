@@ -1,6 +1,10 @@
+
+```markdown
 # To-Do Application
 
 A lightweight, full-stack Web Application built using **Spring Boot**, **Thymeleaf**, and **MySQL**. This application allows users to manage their daily tasks efficiently with operations to view, create, delete, and toggle the completion status of tasks.
+
+---
 
 ## Features
 
@@ -9,6 +13,8 @@ A lightweight, full-stack Web Application built using **Spring Boot**, **Thymele
 * **Toggle Task Status:** Mark tasks as completed or pending instantly.
 * **Delete Task:** Remove tasks permanently from the list.
 
+---
+
 ## Tech Stack
 
 * **Backend:** Java, Spring Boot (Spring MVC, Spring Data JPA)
@@ -16,9 +22,10 @@ A lightweight, full-stack Web Application built using **Spring Boot**, **Thymele
 * **Database:** MySQL
 * **IDE:** IntelliJ IDEA
 
+---
+
 ## Project Structure
 
-The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
 The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
 
 ```text
@@ -45,6 +52,8 @@ To-Do-Application/
             └── com/app/todo_app/
                 └── All Unit/Integration Tests
 
+```
+
 ---
 
 ## API Endpoints & Routes
@@ -57,6 +66,8 @@ The `TaskController` exposes the following endpoints under the `/tasks` base pat
 | **POST** | `/tasks` | Creates a new task using the `title` request parameter. | Redirects back to `/tasks`. |
 | **GET** | `/tasks/{id}/toggle` | Toggles the completion status (completed/pending) of a specific task. | Redirects back to `/tasks`. |
 | **GET** | `/tasks/{id}/delete` | Deletes a specific task by its unique ID. | Redirects back to `/tasks`. |
+
+---
 
 ## Configuration & Setup
 
@@ -72,7 +83,10 @@ Ensure you have the following installed:
 
 Create a MySQL database named `todo_db` (or your preferred name):
 
+```sql
 CREATE DATABASE todo_db;
+
+```
 
 ### 3. Application Properties
 
@@ -91,6 +105,10 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
+```
+
+---
+
 ## Frontend Integration (Thymeleaf)
 
 The controller routes traffic directly to the template located at `src/main/resources/templates/tasks.html`.
@@ -101,6 +119,8 @@ The controller routes traffic directly to the template located at `src/main/reso
 * **Toggling Status:** Uses an anchor tag or button targeting `/tasks/${task.id}/toggle`.
 * **Deleting Tasks:** Uses an anchor tag targeting `/tasks/${task.id}/delete`.
 
+---
+
 ## How to Run the Application in IntelliJ IDEA
 
 1. Clone or open this project directory in **IntelliJ IDEA**.
@@ -108,3 +128,7 @@ The controller routes traffic directly to the template located at `src/main/reso
 3. Open `TodoApplication.java` (the main class annotated with `@SpringBootApplication`).
 4. Click the green **Run** button or press `Shift + F10`.
 5. Open your web browser and navigate to: `http://localhost:8080/tasks`
+
+```
+
+```
