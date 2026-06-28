@@ -22,26 +22,26 @@ The core routing of this application is handled by `TaskController` under the pa
 To-Do-Application/
 ├── pom.xml
 ├── README.md
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   └── com/app/todo_app/
-│   │   │       ├── TodoApplication.java
-│   │   │       ├── controller/
-│   │   │       │   └── TaskController.java
-│   │   │       ├── models/
-│   │   │       │   └── Task.java
-│   │   │       └── service/
-│   │   │           └── TaskService.java
-│   │   └── resources/
-│   │       ├── application.properties
-│   │       └── templates/
-│   │           └── tasks.html
-│   └── test/
-│       └── java/
-│           └── com/app/todo_app/
-│               └── All Unit/Integration Tests
-
+└── src/
+    ├── main/
+    │   ├── java/
+    │   │   └── com/app/todo_app/
+    │   │       ├── TodoApplication.java
+    │   │       ├── controller/
+    │   │       │   └── TaskController.java
+    │   │       ├── models/
+    │   │       │   └── Task.java
+    │   │       └── service/
+    │   │           └── TaskService.java
+    │   └── resources/
+    │       ├── application.properties
+    │       └── templates/
+    │           └── tasks.html
+    └── test/
+        └── java/
+            └── com/app/todo_app/
+                └── All Unit/Integration Tests
+                
 ## API Endpoints & Routes
 
 The `TaskController` exposes the following endpoints under the `/tasks` base path:
