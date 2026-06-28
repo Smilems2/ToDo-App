@@ -1,26 +1,27 @@
 
-```markdown
+---
+
 # To-Do Application
 
-A lightweight, full-stack Web Application built using **Spring Boot**, **Thymeleaf**, and **MySQL**. This application allows users to manage their daily tasks efficiently with operations to view, create, delete, and toggle the completion status of tasks.
+A lightweight, full-stack Web Application designed for seamless daily task management. Built with a robust **Java Spring Boot** backend, dynamic **Thymeleaf** server-side rendering, and a persistent **MySQL** database.
 
 ---
 
 ## Features
 
-* **View Tasks:** Display all current tasks dynamically.
-* **Create Task:** Add new tasks via a simple input form.
-* **Toggle Task Status:** Mark tasks as completed or pending instantly.
-* **Delete Task:** Remove tasks permanently from the list.
+* **View Tasks:** Dynamic rendering of all pending and completed items on a unified dashboard.
+* **Create Task:** Quick task entry through a streamlined input form.
+* **Toggle Status:** Instant state switching between pending and completed.
+* **Delete Task:** Permanent task removal with automatic list refreshment.
 
 ---
 
 ## Tech Stack
 
-* **Backend:** Java, Spring Boot (Spring MVC, Spring Data JPA)
-* **Frontend:** Thymeleaf, HTML5, CSS3
-* **Database:** MySQL
-* **IDE:** IntelliJ IDEA
+* **Backend Framework:** Java 17, Spring Boot (Spring MVC, Spring Data JPA)
+* **Frontend Engine:** Thymeleaf, HTML5, CSS3
+* **Database Management:** MySQL Server
+* **Development Environment:** IntelliJ IDEA & Maven
 
 ---
 
@@ -58,49 +59,49 @@ To-Do-Application/
 
 ## API Endpoints & Routes
 
-The `TaskController` exposes the following endpoints under the `/tasks` base path:
+The `TaskController` maps web traffic using the base path `/tasks`:
 
-| Method | Endpoint | Description | Frontend Action |
+| Method | Endpoint | Description | Frontend UI Action |
 | --- | --- | --- | --- |
-| **GET** | `/tasks` | Fetches all tasks and renders the `tasks.html` view. | Renders the task dashboard. |
-| **POST** | `/tasks` | Creates a new task using the `title` request parameter. | Redirects back to `/tasks`. |
-| **GET** | `/tasks/{id}/toggle` | Toggles the completion status (completed/pending) of a specific task. | Redirects back to `/tasks`. |
-| **GET** | `/tasks/{id}/delete` | Deletes a specific task by its unique ID. | Redirects back to `/tasks`. |
+| 🟢 **GET** | `/tasks` | Fetches all tasks from the database | Renders `tasks.html` dashboard |
+| 🔵 **POST** | `/tasks` | Appends a new task entry via form parameter | Redirects back to `/tasks` |
+| 🟡 **GET** | `/tasks/{id}/toggle` | Inverts completion status of a target ID | Redirects back to `/tasks` |
+| 🔴 **GET** | `/tasks/{id}/delete` | Removes the target task from persistence | Redirects back to `/tasks` |
 
 ---
 
-## Configuration & Setup
+## ⚙️ Configuration & Setup
 
-### 1. Prerequisites
+### 1️Prerequisites
 
-Ensure you have the following installed:
+Ensure your local machine has the following configured:
 
-* Java 17 or higher
-* MySQL Server
-* IntelliJ IDEA
+* **Java Development Kit (JDK):** Version 17 or higher
+* **Database Server:** MySQL Server 8.x
+* **IDE:** IntelliJ IDEA (Community or Ultimate)
 
-### 2. Database Setup
+### 2️Database Setup
 
-Create a MySQL database named `todo_db` (or your preferred name):
+Log into your MySQL terminal or workbench and initialize the schema:
 
 ```sql
 CREATE DATABASE todo_db;
 
 ```
 
-### 3. Application Properties
+### 3️Application Properties
 
-Configure your connection inside `src/main/resources/application.properties`:
+Update your database credentials inside `src/main/resources/application.properties`:
 
 ```properties
 spring.application.name=todo_app
 
-# Database Configuration
+# Database Connection Settings
 spring.datasource.url=jdbc:mysql://localhost:3306/todo_db?useSSL=false&serverTimezone=UTC
 spring.datasource.username=YOUR_MYSQL_USERNAME
 spring.datasource.password=YOUR_MYSQL_PASSWORD
 
-# JPA / Hibernate Properties
+# JPA & Hibernate Mapping Lifecycle
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
@@ -111,24 +112,21 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
 ## Frontend Integration (Thymeleaf)
 
-The controller routes traffic directly to the template located at `src/main/resources/templates/tasks.html`.
+The presentation layer directly compiles data properties injected into the backend standard `Model` container.
 
-### Key Thymeleaf Snippets used:
+### Core Architecture Snippets:
 
-* **Displaying Tasks:** Uses `th:each="task : ${tasks}"` to loop through the Java List passed by the `Model` container.
-* **Toggling Status:** Uses an anchor tag or button targeting `/tasks/${task.id}/toggle`.
-* **Deleting Tasks:** Uses an anchor tag targeting `/tasks/${task.id}/delete`.
+* **Data Looping:** Renders rows dynamically using `th:each="task : ${tasks}"`.
+* **State Updates:** Inverts task progress variables via a dedicated route link targeting `/tasks/${task.id}/toggle`.
+* **Resource Cleanup:** Links button or icon interactions directly to the path variable route `/tasks/${task.id}/delete`.
 
 ---
 
-## How to Run the Application in IntelliJ IDEA
+## Execution Guide
 
-1. Clone or open this project directory in **IntelliJ IDEA**.
-2. Let Maven reload and download all necessary dependencies specified in the `pom.xml`.
-3. Open `TodoApplication.java` (the main class annotated with `@SpringBootApplication`).
-4. Click the green **Run** button or press `Shift + F10`.
-5. Open your web browser and navigate to: `http://localhost:8080/tasks`
-
-```
-
-```
+1. Launch **IntelliJ IDEA** and choose *Open*, selecting the root `To-Do-Application/` directory.
+2. Allow Maven to index and pull down dependencies outlined in your `pom.xml`.
+3. Locate `TodoApplication.java` inside your project explorer root package.
+4. Click the green **Run** icon on your gutter or press `Shift + F10`.
+5. Open your web browser of choice and access the application at:
+👉 **`http://localhost:8080/tasks`**
