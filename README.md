@@ -19,6 +19,9 @@ A lightweight, full-stack Web Application built using **Spring Boot**, **Thymele
 ## Project Structure
 
 The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
+The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
+
+```text
 To-Do-Application/
 ├── pom.xml
 ├── README.md
@@ -41,7 +44,7 @@ To-Do-Application/
         └── java/
             └── com/app/todo_app/
                 └── All Unit/Integration Tests
-                
+
 ## API Endpoints & Routes
 
 The `TaskController` exposes the following endpoints under the `/tasks` base path:
