@@ -20,7 +20,6 @@ A lightweight, full-stack Web Application built using **Spring Boot**, **Thymele
 
 The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
 
-text
 src/main/java/
 └── com/app/todo_app/
     ├── controller/
