@@ -45,6 +45,8 @@ To-Do-Application/
             └── com/app/todo_app/
                 └── All Unit/Integration Tests
 
+---
+
 ## API Endpoints & Routes
 
 The `TaskController` exposes the following endpoints under the `/tasks` base path:
