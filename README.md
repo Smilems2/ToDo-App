@@ -2,34 +2,47 @@
 
 A lightweight, full-stack Web Application built using **Spring Boot**, **Thymeleaf**, and **MySQL**. This application allows users to manage their daily tasks efficiently with operations to view, create, delete, and toggle the completion status of tasks.
 
-## 🚀 Features
+## Features
 
 * **View Tasks:** Display all current tasks dynamically.
 * **Create Task:** Add new tasks via a simple input form.
 * **Toggle Task Status:** Mark tasks as completed or pending instantly.
 * **Delete Task:** Remove tasks permanently from the list.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Backend:** Java, Spring Boot (Spring MVC, Spring Data JPA)
 * **Frontend:** Thymeleaf, HTML5, CSS3
 * **Database:** MySQL
 * **IDE:** IntelliJ IDEA
 
-## 📁 Project Structure
+## Project Structure
 
 The core routing of this application is handled by `TaskController` under the package `com.app.todo_app.controller`.
+To-Do-Application/
+├── pom.xml
+├── README.md
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/app/todo_app/
+│   │   │       ├── TodoApplication.java
+│   │   │       ├── controller/
+│   │   │       │   └── TaskController.java
+│   │   │       ├── models/
+│   │   │       │   └── Task.java
+│   │   │       └── service/
+│   │   │           └── TaskService.java
+│   │   └── resources/
+│   │       ├── application.properties
+│   │       └── templates/
+│   │           └── tasks.html
+│   └── test/
+│       └── java/
+│           └── com/app/todo_app/
+│               └── All Unit/Integration Tests
 
-src/main/java/
-└── com/app/todo_app/
-    ├── controller/
-    │   └── TaskController.java  <-- Handles the web requests
-    ├── models/
-    │   └── Task.java            <-- Task Entity
-    └── service/
-        └── TaskService.java     <-- Business Logic
-
-## 🔗 API Endpoints & Routes
+## API Endpoints & Routes
 
 The `TaskController` exposes the following endpoints under the `/tasks` base path:
 
@@ -40,7 +53,7 @@ The `TaskController` exposes the following endpoints under the `/tasks` base pat
 | **GET** | `/tasks/{id}/toggle` | Toggles the completion status (completed/pending) of a specific task. | Redirects back to `/tasks`. |
 | **GET** | `/tasks/{id}/delete` | Deletes a specific task by its unique ID. | Redirects back to `/tasks`. |
 
-## ⚙️ Configuration & Setup
+## Configuration & Setup
 
 ### 1. Prerequisites
 
@@ -73,7 +86,7 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
 
-## 🖥️ Frontend Integration (Thymeleaf)
+## Frontend Integration (Thymeleaf)
 
 The controller routes traffic directly to the template located at `src/main/resources/templates/tasks.html`.
 
@@ -83,7 +96,7 @@ The controller routes traffic directly to the template located at `src/main/reso
 * **Toggling Status:** Uses an anchor tag or button targeting `/tasks/${task.id}/toggle`.
 * **Deleting Tasks:** Uses an anchor tag targeting `/tasks/${task.id}/delete`.
 
-## 🏃 How to Run the Application in IntelliJ IDEA
+## How to Run the Application in IntelliJ IDEA
 
 1. Clone or open this project directory in **IntelliJ IDEA**.
 2. Let Maven reload and download all necessary dependencies specified in the `pom.xml`.
